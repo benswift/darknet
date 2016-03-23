@@ -1,0 +1,148 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/blas.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(bind-lib libdarknet pm [i8,i32,i32,float*]*
+"@param M - index 0
+@param N - index 1
+@param A - index 2")
+(bind-lib libdarknet random_matrix [float,i32,i32]*
+"@param rows - index 0
+@param cols - index 1")
+(bind-lib libdarknet time_random_matrix [i8,i32,i32,i32,i32,i32]*
+"@param TA - index 0
+@param TB - index 1
+@param m - index 2
+@param k - index 3
+@param n - index 4")
+(bind-lib libdarknet test_blas [i8]*
+"")
+(bind-lib libdarknet const_cpu [i8,i32,float,float*,i32]*
+"@param N - index 0
+@param ALPHA - index 1
+@param X - index 2
+@param INCX - index 3")
+(bind-lib libdarknet pow_cpu [i8,i32,float,float*,i32,float*,i32]*
+"@param N - index 0
+@param ALPHA - index 1
+@param X - index 2
+@param INCX - index 3
+@param Y - index 4
+@param INCY - index 5")
+(bind-lib libdarknet mul_cpu [i8,i32,float*,i32,float*,i32]*
+"@param N - index 0
+@param X - index 1
+@param INCX - index 2
+@param Y - index 3
+@param INCY - index 4")
+(bind-lib libdarknet axpy_cpu [i8,i32,float,float*,i32,float*,i32]*
+"@param N - index 0
+@param ALPHA - index 1
+@param X - index 2
+@param INCX - index 3
+@param Y - index 4
+@param INCY - index 5")
+(bind-lib libdarknet copy_cpu [i8,i32,float*,i32,float*,i32]*
+"@param N - index 0
+@param X - index 1
+@param INCX - index 2
+@param Y - index 3
+@param INCY - index 4")
+(bind-lib libdarknet scal_cpu [i8,i32,float,float*,i32]*
+"@param N - index 0
+@param ALPHA - index 1
+@param X - index 2
+@param INCX - index 3")
+(bind-lib libdarknet fill_cpu [i8,i32,float,float*,i32]*
+"@param N - index 0
+@param ALPHA - index 1
+@param X - index 2
+@param INCX - index 3")
+(bind-lib libdarknet dot_cpu [float,i32,float*,i32,float*,i32]*
+"@param N - index 0
+@param X - index 1
+@param INCX - index 2
+@param Y - index 3
+@param INCY - index 4")
+(bind-lib libdarknet test_gpu_blas [i8]*
+"")
+(bind-lib libdarknet shortcut_cpu [i8,i32,i32,i32,i32,float*,i32,i32,i32,float*]*
+"@param batch - index 0
+@param w1 - index 1
+@param h1 - index 2
+@param c1 - index 3
+@param add - index 4
+@param w2 - index 5
+@param h2 - index 6
+@param c2 - index 7
+@param out - index 8")
+(bind-lib libdarknet mean_cpu [i8,float*,i32,i32,i32,float*]*
+"@param x - index 0
+@param batch - index 1
+@param filters - index 2
+@param spatial - index 3
+@param mean - index 4")
+(bind-lib libdarknet variance_cpu [i8,float*,float*,i32,i32,i32,float*]*
+"@param x - index 0
+@param mean - index 1
+@param batch - index 2
+@param filters - index 3
+@param spatial - index 4
+@param variance - index 5")
+(bind-lib libdarknet normalize_cpu [i8,float*,float*,float*,i32,i32,i32]*
+"@param x - index 0
+@param mean - index 1
+@param variance - index 2
+@param batch - index 3
+@param filters - index 4
+@param spatial - index 5")
+(bind-lib libdarknet scale_bias [i8,float*,float*,i32,i32,i32]*
+"@param output - index 0
+@param scales - index 1
+@param batch - index 2
+@param n - index 3
+@param size - index 4")
+(bind-lib libdarknet backward_scale_cpu [i8,float*,float*,i32,i32,i32,float*]*
+"@param x_norm - index 0
+@param delta - index 1
+@param batch - index 2
+@param n - index 3
+@param size - index 4
+@param scale_updates - index 5")
+(bind-lib libdarknet mean_delta_cpu [i8,float*,float*,i32,i32,i32,float*]*
+"@param delta - index 0
+@param variance - index 1
+@param batch - index 2
+@param filters - index 3
+@param spatial - index 4
+@param mean_delta - index 5")
+(bind-lib libdarknet variance_delta_cpu [i8,float*,float*,float*,float*,i32,i32,i32,float*]*
+"@param x - index 0
+@param delta - index 1
+@param mean - index 2
+@param variance - index 3
+@param batch - index 4
+@param filters - index 5
+@param spatial - index 6
+@param variance_delta - index 7")
+(bind-lib libdarknet normalize_delta_cpu [i8,float*,float*,float*,float*,float*,i32,i32,i32,float*]*
+"@param x - index 0
+@param mean - index 1
+@param variance - index 2
+@param mean_delta - index 3
+@param variance_delta - index 4
+@param batch - index 5
+@param filters - index 6
+@param spatial - index 7
+@param delta - index 8")
+(bind-lib libdarknet smooth_l1_cpu [i8,i32,float*,float*,float*,float*]*
+"@param n - index 0
+@param pred - index 1
+@param truth - index 2
+@param delta - index 3
+@param error - index 4")
+(bind-lib libdarknet l2_cpu [i8,i32,float*,float*,float*,float*]*
+"@param n - index 0
+@param pred - index 1
+@param truth - index 2
+@param delta - index 3
+@param error - index 4")

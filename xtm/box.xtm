@@ -1,0 +1,42 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/box.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(bind-type box <float,float,float,float>
+"@member x - index 0
+@member y - index 1
+@member w - index 2
+@member h - index 3")
+(bind-type dbox <float,float,float,float>
+"@member dx - index 0
+@member dy - index 1
+@member dw - index 2
+@member dh - index 3")
+(bind-lib libdarknet float_to_box [box,float*]*
+"@param f - index 0")
+(bind-lib libdarknet box_iou [float,box,box]*
+"@param a - index 0
+@param b - index 1")
+(bind-lib libdarknet box_rmse [float,box,box]*
+"@param a - index 0
+@param b - index 1")
+(bind-lib libdarknet diou [dbox,box,box]*
+"@param a - index 0
+@param b - index 1")
+(bind-lib libdarknet do_nms [i8,box*,float**,i32,i32,float]*
+"@param boxes - index 0
+@param probs - index 1
+@param total - index 2
+@param classes - index 3
+@param thresh - index 4")
+(bind-lib libdarknet do_nms_sort [i8,box*,float**,i32,i32,float]*
+"@param boxes - index 0
+@param probs - index 1
+@param total - index 2
+@param classes - index 3
+@param thresh - index 4")
+(bind-lib libdarknet decode_box [box,box,box]*
+"@param b - index 0
+@param anchor - index 1")
+(bind-lib libdarknet encode_box [box,box,box]*
+"@param b - index 0
+@param anchor - index 1")

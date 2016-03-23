@@ -1,0 +1,9 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/server.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(sys:load "network.xtm")
+(bind-lib libdarknet client_update [i8,network,i8*]*
+"@param net - index 0
+@param address - index 1")
+(bind-lib libdarknet server_update [i8,network]*
+"@param net - index 0")

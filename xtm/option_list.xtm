@@ -1,0 +1,40 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/option_list.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(sys:load "list.xtm")
+(bind-type kvp <i8*,i8*,i32>
+"@member key - index 0
+@member val - index 1
+@member used - index 2")
+(bind-lib libdarknet read_option [i32,i8*,list*]*
+"@param s - index 0
+@param options - index 1")
+(bind-lib libdarknet option_insert [i8,list*,i8*,i8*]*
+"@param l - index 0
+@param key - index 1
+@param val - index 2")
+(bind-lib libdarknet option_find [i8,list*,i8*]*
+"@param l - index 0
+@param key - index 1")
+(bind-lib libdarknet option_find_str [i8,list*,i8*,i8*]*
+"@param l - index 0
+@param key - index 1
+@param def - index 2")
+(bind-lib libdarknet option_find_int [i32,list*,i8*,i32]*
+"@param l - index 0
+@param key - index 1
+@param def - index 2")
+(bind-lib libdarknet option_find_int_quiet [i32,list*,i8*,i32]*
+"@param l - index 0
+@param key - index 1
+@param def - index 2")
+(bind-lib libdarknet option_find_float [float,list*,i8*,float]*
+"@param l - index 0
+@param key - index 1
+@param def - index 2")
+(bind-lib libdarknet option_find_float_quiet [float,list*,i8*,float]*
+"@param l - index 0
+@param key - index 1
+@param def - index 2")
+(bind-lib libdarknet option_unused [i8,list*]*
+"@param l - index 0")

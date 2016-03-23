@@ -1,0 +1,23 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/cost_layer.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(sys:load "layer.xtm")
+(sys:load "network.xtm")
+(bind-lib libdarknet get_cost_type [COST_TYPE,i8*]*
+"@param s - index 0")
+(bind-lib libdarknet get_cost_string [i8,COST_TYPE]*
+"@param a - index 0")
+(bind-lib libdarknet make_cost_layer [cost_layer,i32,i32,COST_TYPE,float]*
+"@param batch - index 0
+@param inputs - index 1
+@param type - index 2
+@param scale - index 3")
+(bind-lib libdarknet forward_cost_layer [i8,cost_layer,network_state]*
+"@param l - index 0
+@param state - index 1")
+(bind-lib libdarknet backward_cost_layer [i8,cost_layer,network_state]*
+"@param l - index 0
+@param state - index 1")
+(bind-lib libdarknet resize_cost_layer [i8,cost_layer*,i32]*
+"@param l - index 0
+@param inputs - index 1")

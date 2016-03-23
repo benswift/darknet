@@ -1,0 +1,20 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/softmax_layer.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(sys:load "layer.xtm")
+(sys:load "network.xtm")
+(bind-lib libdarknet softmax_array [i8,float*,i32,float,float*]*
+"@param input - index 0
+@param n - index 1
+@param temp - index 2
+@param output - index 3")
+(bind-lib libdarknet make_softmax_layer [softmax_layer,i32,i32,i32]*
+"@param batch - index 0
+@param inputs - index 1
+@param groups - index 2")
+(bind-lib libdarknet forward_softmax_layer [i8,softmax_layer,network_state]*
+"@param l - index 0
+@param state - index 1")
+(bind-lib libdarknet backward_softmax_layer [i8,softmax_layer,network_state]*
+"@param l - index 0
+@param state - index 1")

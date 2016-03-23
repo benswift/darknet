@@ -1,0 +1,12 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/col2im.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(bind-lib libdarknet col2im_cpu [i8,float*,i32,i32,i32,i32,i32,i32,float*]*
+"@param data_col - index 0
+@param channels - index 1
+@param height - index 2
+@param width - index 3
+@param ksize - index 4
+@param stride - index 5
+@param pad - index 6
+@param data_im - index 7")

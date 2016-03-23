@@ -1,0 +1,135 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/utils.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(sys:load "list.xtm")
+(bind-lib libdarknet shuffle [i8,i8*,size_t,size_t]*
+"@param arr - index 0
+@param n - index 1
+@param size - index 2")
+(bind-lib libdarknet sorta_shuffle [i8,i8*,size_t,size_t,size_t]*
+"@param arr - index 0
+@param n - index 1
+@param size - index 2
+@param sections - index 3")
+(bind-lib libdarknet free_ptrs [i8,i8**,i32]*
+"@param ptrs - index 0
+@param n - index 1")
+(bind-lib libdarknet basecfg [i8,i8*]*
+"@param cfgfile - index 0")
+(bind-lib libdarknet alphanum_to_int [i32,i8]*
+"@param c - index 0")
+(bind-lib libdarknet int_to_alphanum [i8,i32]*
+"@param i - index 0")
+(bind-lib libdarknet read_all [i8,i32,i8*,size_t]*
+"@param fd - index 0
+@param buffer - index 1
+@param bytes - index 2")
+(bind-lib libdarknet write_all [i8,i32,i8*,size_t]*
+"@param fd - index 0
+@param buffer - index 1
+@param bytes - index 2")
+(bind-lib libdarknet find_replace [i8,i8*,i8*,i8*]*
+"@param str - index 0
+@param orig - index 1
+@param rep - index 2")
+(bind-lib libdarknet error [i8,i8*]*
+"@param s - index 0")
+(bind-lib libdarknet malloc_error [i8]*
+"")
+(bind-lib libdarknet file_error [i8,i8*]*
+"@param s - index 0")
+(bind-lib libdarknet strip [i8,i8*]*
+"@param s - index 0")
+(bind-lib libdarknet strip_char [i8,i8*,i8]*
+"@param s - index 0
+@param bad - index 1")
+(bind-lib libdarknet top_k [i8,float*,i32,i32,i32*]*
+"@param a - index 0
+@param n - index 1
+@param k - index 2
+@param index - index 3")
+(bind-lib libdarknet split_str [list,i8*,i8]*
+"@param s - index 0
+@param delim - index 1")
+(bind-lib libdarknet fgetl [i8,FILE*]*
+"@param fp - index 0")
+(bind-lib libdarknet parse_csv_line [list,i8*]*
+"@param line - index 0")
+(bind-lib libdarknet copy_string [i8,i8*]*
+"@param s - index 0")
+(bind-lib libdarknet count_fields [i32,i8*]*
+"@param line - index 0")
+(bind-lib libdarknet parse_fields [float,i8*,i32]*
+"@param line - index 0
+@param n - index 1")
+(bind-lib libdarknet normalize_array [i8,float*,i32]*
+"@param a - index 0
+@param n - index 1")
+(bind-lib libdarknet scale_array [i8,float*,i32,float]*
+"@param a - index 0
+@param n - index 1
+@param s - index 2")
+(bind-lib libdarknet translate_array [i8,float*,i32,float]*
+"@param a - index 0
+@param n - index 1
+@param s - index 2")
+(bind-lib libdarknet max_index [i32,float*,i32]*
+"@param a - index 0
+@param n - index 1")
+(bind-lib libdarknet constrain [float,float,float,float]*
+"@param min - index 0
+@param max - index 1
+@param a - index 2")
+(bind-lib libdarknet mse_array [float,float*,i32]*
+"@param a - index 0
+@param n - index 1")
+(bind-lib libdarknet rand_normal [float]*
+"")
+(bind-lib libdarknet rand_uniform [float,float,float]*
+"@param min - index 0
+@param max - index 1")
+(bind-lib libdarknet rand_int [i32,i32,i32]*
+"@param min - index 0
+@param max - index 1")
+(bind-lib libdarknet sum_array [float,float*,i32]*
+"@param a - index 0
+@param n - index 1")
+(bind-lib libdarknet mean_array [float,float*,i32]*
+"@param a - index 0
+@param n - index 1")
+(bind-lib libdarknet mean_arrays [i8,float**,i32,i32,float*]*
+"@param a - index 0
+@param n - index 1
+@param els - index 2
+@param avg - index 3")
+(bind-lib libdarknet variance_array [float,float*,i32]*
+"@param a - index 0
+@param n - index 1")
+(bind-lib libdarknet mag_array [float,float*,i32]*
+"@param a - index 0
+@param n - index 1")
+(bind-lib libdarknet one_hot_encode [float,float*,i32,i32]*
+"@param a - index 0
+@param n - index 1
+@param k - index 2")
+(bind-lib libdarknet sec [float,clock_t]*
+"@param clocks - index 0")
+(bind-lib libdarknet find_int_arg [i32,i32,i8**,i8*,i32]*
+"@param argc - index 0
+@param argv - index 1
+@param arg - index 2
+@param def - index 3")
+(bind-lib libdarknet find_float_arg [float,i32,i8**,i8*,float]*
+"@param argc - index 0
+@param argv - index 1
+@param arg - index 2
+@param def - index 3")
+(bind-lib libdarknet find_arg [i32,i32,i8*,i8*]*
+"@param argc - index 0
+@param argv - index 1
+@param arg - index 2")
+(bind-lib libdarknet find_char_arg [i8,i32,i8**,i8*,i8*]*
+"@param argc - index 0
+@param argv - index 1
+@param arg - index 2
+@param def - index 3")

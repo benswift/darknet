@@ -1,0 +1,18 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/dropout_layer.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(sys:load "layer.xtm")
+(sys:load "network.xtm")
+(bind-lib libdarknet make_dropout_layer [dropout_layer,i32,i32,float]*
+"@param batch - index 0
+@param inputs - index 1
+@param probability - index 2")
+(bind-lib libdarknet forward_dropout_layer [i8,dropout_layer,network_state]*
+"@param l - index 0
+@param state - index 1")
+(bind-lib libdarknet backward_dropout_layer [i8,dropout_layer,network_state]*
+"@param l - index 0
+@param state - index 1")
+(bind-lib libdarknet resize_dropout_layer [i8,dropout_layer*,i32]*
+"@param l - index 0
+@param inputs - index 1")

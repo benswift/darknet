@@ -1,0 +1,26 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/parser.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(sys:load "network.xtm")
+(bind-lib libdarknet parse_network_cfg [network,i8*]*
+"@param filename - index 0")
+(bind-lib libdarknet save_network [i8,network,i8*]*
+"@param net - index 0
+@param filename - index 1")
+(bind-lib libdarknet save_weights [i8,network,i8*]*
+"@param net - index 0
+@param filename - index 1")
+(bind-lib libdarknet save_weights_upto [i8,network,i8*,i32]*
+"@param net - index 0
+@param filename - index 1
+@param cutoff - index 2")
+(bind-lib libdarknet save_weights_double [i8,network,i8*]*
+"@param net - index 0
+@param filename - index 1")
+(bind-lib libdarknet load_weights [i8,network*,i8*]*
+"@param net - index 0
+@param filename - index 1")
+(bind-lib libdarknet load_weights_upto [i8,network*,i8*,i32]*
+"@param net - index 0
+@param filename - index 1
+@param cutoff - index 2")

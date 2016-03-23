@@ -1,0 +1,146 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/network.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(sys:load "image.xtm")
+(sys:load "layer.xtm")
+(sys:load "data.xtm")
+(bind-alias learning_rate_policy enum)
+(bind-val CONSTANT learning_rate_policy 0)
+(bind-val STEP learning_rate_policy 1)
+(bind-val EXP learning_rate_policy 2)
+(bind-val POLY learning_rate_policy 3)
+(bind-val STEPS learning_rate_policy 4)
+(bind-val SIG learning_rate_policy 5)
+(bind-type network <i32,i32,i32*,float,i32,float,float,layer*,i32,float*,learning_rate_policy,float,float,float,float,i32,i32,i32,float*,i32*,i32,i32,i32,i32,i32,i32>
+"@member n - index 0
+@member batch - index 1
+@member seen - index 2
+@member epoch - index 3
+@member subdivisions - index 4
+@member momentum - index 5
+@member decay - index 6
+@member layers - index 7
+@member outputs - index 8
+@member output - index 9
+@member policy - index 10
+@member learning_rate - index 11
+@member gamma - index 12
+@member scale - index 13
+@member power - index 14
+@member time_steps - index 15
+@member step - index 16
+@member max_batches - index 17
+@member scales - index 18
+@member steps - index 19
+@member num_steps - index 20
+@member inputs - index 21
+@member h - index 22
+@member w - index 23
+@member c - index 24
+@member max_crop - index 25")
+(bind-type network_state <float*,float*,float*,i32,i32,network>
+"@member truth - index 0
+@member input - index 1
+@member delta - index 2
+@member train - index 3
+@member index - index 4
+@member net - index 5")
+(bind-lib libdarknet get_current_rate [float,network]*
+"@param net - index 0")
+(bind-lib libdarknet get_current_batch [i32,network]*
+"@param net - index 0")
+(bind-lib libdarknet free_network [i8,network]*
+"@param net - index 0")
+(bind-lib libdarknet compare_networks [i8,network,network,data]*
+"@param n1 - index 0
+@param n2 - index 1
+@param d - index 2")
+(bind-lib libdarknet get_layer_string [i8,LAYER_TYPE]*
+"@param a - index 0")
+(bind-lib libdarknet make_network [network,i32]*
+"@param n - index 0")
+(bind-lib libdarknet forward_network [i8,network,network_state]*
+"@param net - index 0
+@param state - index 1")
+(bind-lib libdarknet backward_network [i8,network,network_state]*
+"@param net - index 0
+@param state - index 1")
+(bind-lib libdarknet update_network [i8,network]*
+"@param net - index 0")
+(bind-lib libdarknet train_network [float,network,data]*
+"@param net - index 0
+@param d - index 1")
+(bind-lib libdarknet train_network_batch [float,network,data,i32]*
+"@param net - index 0
+@param d - index 1
+@param n - index 2")
+(bind-lib libdarknet train_network_sgd [float,network,data,i32]*
+"@param net - index 0
+@param d - index 1
+@param n - index 2")
+(bind-lib libdarknet train_network_datum [float,network,float*,float*]*
+"@param net - index 0
+@param x - index 1
+@param y - index 2")
+(bind-lib libdarknet network_predict_data [matrix,network,data]*
+"@param net - index 0
+@param test - index 1")
+(bind-lib libdarknet network_predict [float,network,float*]*
+"@param net - index 0
+@param input - index 1")
+(bind-lib libdarknet network_accuracy [float,network,data]*
+"@param net - index 0
+@param d - index 1")
+(bind-lib libdarknet network_accuracies [float,network,data,i32]*
+"@param net - index 0
+@param d - index 1
+@param n - index 2")
+(bind-lib libdarknet network_accuracy_multi [float,network,data,i32]*
+"@param net - index 0
+@param d - index 1
+@param n - index 2")
+(bind-lib libdarknet top_predictions [i8,network,i32,i32*]*
+"@param net - index 0
+@param n - index 1
+@param index - index 2")
+(bind-lib libdarknet get_network_output [float,network]*
+"@param net - index 0")
+(bind-lib libdarknet get_network_output_layer [float,network,i32]*
+"@param net - index 0
+@param i - index 1")
+(bind-lib libdarknet get_network_delta_layer [float,network,i32]*
+"@param net - index 0
+@param i - index 1")
+(bind-lib libdarknet get_network_delta [float,network]*
+"@param net - index 0")
+(bind-lib libdarknet get_network_output_size_layer [i32,network,i32]*
+"@param net - index 0
+@param i - index 1")
+(bind-lib libdarknet get_network_output_size [i32,network]*
+"@param net - index 0")
+(bind-lib libdarknet get_network_image [image,network]*
+"@param net - index 0")
+(bind-lib libdarknet get_network_image_layer [image,network,i32]*
+"@param net - index 0
+@param i - index 1")
+(bind-lib libdarknet get_predicted_class_network [i32,network]*
+"@param net - index 0")
+(bind-lib libdarknet print_network [i8,network]*
+"@param net - index 0")
+(bind-lib libdarknet visualize_network [i8,network]*
+"@param net - index 0")
+(bind-lib libdarknet resize_network [i32,network*,i32,i32]*
+"@param net - index 0
+@param w - index 1
+@param h - index 2")
+(bind-lib libdarknet set_batch_network [i8,network*,i32]*
+"@param net - index 0
+@param b - index 1")
+(bind-lib libdarknet get_network_input_size [i32,network]*
+"@param net - index 0")
+(bind-lib libdarknet get_network_cost [float,network]*
+"@param net - index 0")
+(bind-lib libdarknet get_network_nuisance [i32,network]*
+"@param net - index 0")
+(bind-lib libdarknet get_network_background [i32,network]*
+"@param net - index 0")

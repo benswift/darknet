@@ -1,0 +1,84 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/convolutional_layer.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(sys:load "cuda.xtm")
+(sys:load "image.xtm")
+(sys:load "activations.xtm")
+(sys:load "layer.xtm")
+(sys:load "network.xtm")
+(bind-lib libdarknet make_convolutional_layer [convolutional_layer,i32,i32,i32,i32,i32,i32,i32,i32,ACTIVATION,i32,i32]*
+"@param batch - index 0
+@param h - index 1
+@param w - index 2
+@param c - index 3
+@param n - index 4
+@param size - index 5
+@param stride - index 6
+@param pad - index 7
+@param activation - index 8
+@param batch_normalization - index 9
+@param binary - index 10")
+(bind-lib libdarknet denormalize_convolutional_layer [i8,convolutional_layer]*
+"@param l - index 0")
+(bind-lib libdarknet resize_convolutional_layer [i8,convolutional_layer*,i32,i32]*
+"@param layer - index 0
+@param w - index 1
+@param h - index 2")
+(bind-lib libdarknet forward_convolutional_layer [i8,convolutional_layer,network_state]*
+"@param layer - index 0
+@param state - index 1")
+(bind-lib libdarknet update_convolutional_layer [i8,convolutional_layer,i32,float,float,float]*
+"@param layer - index 0
+@param batch - index 1
+@param learning_rate - index 2
+@param momentum - index 3
+@param decay - index 4")
+(bind-lib libdarknet visualize_convolutional_layer [image,convolutional_layer,i8*,image*]*
+"@param layer - index 0
+@param window - index 1
+@param prev_filters - index 2")
+(bind-lib libdarknet binarize_filters [i8,float*,i32,i32,float*]*
+"@param filters - index 0
+@param n - index 1
+@param size - index 2
+@param binary - index 3")
+(bind-lib libdarknet swap_binary [i8,convolutional_layer*]*
+"@param l - index 0")
+(bind-lib libdarknet binarize_filters2 [i8,float*,i32,i32,i8*,float*]*
+"@param filters - index 0
+@param n - index 1
+@param size - index 2
+@param binary - index 3
+@param scales - index 4")
+(bind-lib libdarknet backward_convolutional_layer [i8,convolutional_layer,network_state]*
+"@param layer - index 0
+@param state - index 1")
+(bind-lib libdarknet add_bias [i8,float*,float*,i32,i32,i32]*
+"@param output - index 0
+@param biases - index 1
+@param batch - index 2
+@param n - index 3
+@param size - index 4")
+(bind-lib libdarknet backward_bias [i8,float*,float*,i32,i32,i32]*
+"@param bias_updates - index 0
+@param delta - index 1
+@param batch - index 2
+@param n - index 3
+@param size - index 4")
+(bind-lib libdarknet get_convolutional_image [image,convolutional_layer]*
+"@param layer - index 0")
+(bind-lib libdarknet get_convolutional_delta [image,convolutional_layer]*
+"@param layer - index 0")
+(bind-lib libdarknet get_convolutional_filter [image,convolutional_layer,i32]*
+"@param layer - index 0
+@param i - index 1")
+(bind-lib libdarknet convolutional_out_height [i32,convolutional_layer]*
+"@param layer - index 0")
+(bind-lib libdarknet convolutional_out_width [i32,convolutional_layer]*
+"@param layer - index 0")
+(bind-lib libdarknet rescale_filters [i8,convolutional_layer,float,float]*
+"@param l - index 0
+@param scale - index 1
+@param trans - index 2")
+(bind-lib libdarknet rgbgr_filters [i8,convolutional_layer]*
+"@param l - index 0")

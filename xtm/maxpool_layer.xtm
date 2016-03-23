@@ -1,0 +1,26 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/maxpool_layer.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(sys:load "image.xtm")
+(sys:load "cuda.xtm")
+(sys:load "layer.xtm")
+(sys:load "network.xtm")
+(bind-lib libdarknet get_maxpool_image [image,maxpool_layer]*
+"@param l - index 0")
+(bind-lib libdarknet make_maxpool_layer [maxpool_layer,i32,i32,i32,i32,i32,i32]*
+"@param batch - index 0
+@param h - index 1
+@param w - index 2
+@param c - index 3
+@param size - index 4
+@param stride - index 5")
+(bind-lib libdarknet resize_maxpool_layer [i8,maxpool_layer*,i32,i32]*
+"@param l - index 0
+@param w - index 1
+@param h - index 2")
+(bind-lib libdarknet forward_maxpool_layer [i8,maxpool_layer,network_state]*
+"@param l - index 0
+@param state - index 1")
+(bind-lib libdarknet backward_maxpool_layer [i8,maxpool_layer,network_state]*
+"@param l - index 0
+@param state - index 1")

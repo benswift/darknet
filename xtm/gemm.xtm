@@ -1,0 +1,42 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/gemm.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(bind-lib libdarknet gemm_bin [i8,i32,i32,i32,float,i8*,i32,float*,i32,float*,i32]*
+"@param M - index 0
+@param N - index 1
+@param K - index 2
+@param ALPHA - index 3
+@param A - index 4
+@param lda - index 5
+@param B - index 6
+@param ldb - index 7
+@param C - index 8
+@param ldc - index 9")
+(bind-lib libdarknet gemm [i8,i32,i32,i32,i32,i32,float,float*,i32,float*,i32,float,float*,i32]*
+"@param TA - index 0
+@param TB - index 1
+@param M - index 2
+@param N - index 3
+@param K - index 4
+@param ALPHA - index 5
+@param A - index 6
+@param lda - index 7
+@param B - index 8
+@param ldb - index 9
+@param BETA - index 10
+@param C - index 11
+@param ldc - index 12")
+(bind-lib libdarknet gemm_cpu [i8,i32,i32,i32,i32,i32,float,float*,i32,float*,i32,float,float*,i32]*
+"@param TA - index 0
+@param TB - index 1
+@param M - index 2
+@param N - index 3
+@param K - index 4
+@param ALPHA - index 5
+@param A - index 6
+@param lda - index 7
+@param B - index 8
+@param ldb - index 9
+@param BETA - index 10
+@param C - index 11
+@param ldc - index 12")

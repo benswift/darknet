@@ -1,0 +1,167 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/data.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(sys:load "matrix.xtm")
+(sys:load "list.xtm")
+(sys:load "image.xtm")
+(bind-val data_seed i32)
+(bind-type data <i32,i32,matrix,matrix,i32>
+"@member w - index 0
+@member h - index 1
+@member X - index 2
+@member y - index 3
+@member shallow - index 4")
+(bind-alias data_type enum)
+(bind-val CLASSIFICATION_DATA data_type 0)
+(bind-val DETECTION_DATA data_type 1)
+(bind-val CAPTCHA_DATA data_type 2)
+(bind-val REGION_DATA data_type 3)
+(bind-val IMAGE_DATA data_type 4)
+(bind-val COMPARE_DATA data_type 5)
+(bind-val WRITING_DATA data_type 6)
+(bind-val SWAG_DATA data_type 7)
+(bind-val TAG_DATA data_type 8)
+(bind-val OLD_CLASSIFICATION_DATA data_type 9)
+(bind-type load_args <i8**,i8*,i32,i32,i8**,i32,i32,i32,i32,i32,i32,i32,i32,i32,i32,i32,i32,float,data*,image*,image*,data_type>
+"@member paths - index 0
+@member path - index 1
+@member n - index 2
+@member m - index 3
+@member labels - index 4
+@member h - index 5
+@member w - index 6
+@member out_w - index 7
+@member out_h - index 8
+@member nh - index 9
+@member nw - index 10
+@member num_boxes - index 11
+@member min - index 12
+@member max - index 13
+@member size - index 14
+@member classes - index 15
+@member background - index 16
+@member jitter - index 17
+@member d - index 18
+@member im - index 19
+@member resized - index 20
+@member type - index 21")
+(bind-type box_label <i32,float,float,float,float,float,float,float,float>
+"@member id - index 0
+@member x - index 1
+@member y - index 2
+@member w - index 3
+@member h - index 4
+@member left - index 5
+@member right - index 6
+@member top - index 7
+@member bottom - index 8")
+(bind-lib libdarknet free_data [i8,data]*
+"@param d - index 0")
+(bind-lib libdarknet load_data_in_thread [pthread_t,load_args]*
+"@param args - index 0")
+(bind-lib libdarknet print_letters [i8,float*,i32]*
+"@param pred - index 0
+@param n - index 1")
+(bind-lib libdarknet load_data_captcha [data,i8**,i32,i32,i32,i32,i32]*
+"@param paths - index 0
+@param n - index 1
+@param m - index 2
+@param k - index 3
+@param w - index 4
+@param h - index 5")
+(bind-lib libdarknet load_data_captcha_encode [data,i8**,i32,i32,i32,i32]*
+"@param paths - index 0
+@param n - index 1
+@param m - index 2
+@param w - index 3
+@param h - index 4")
+(bind-lib libdarknet load_data [data,i8**,i32,i32,i8**,i32,i32,i32]*
+"@param paths - index 0
+@param n - index 1
+@param m - index 2
+@param labels - index 3
+@param k - index 4
+@param w - index 5
+@param h - index 6")
+(bind-lib libdarknet load_data_detection [data,i32,i8**,i32,i32,i32,i32,i32,i32]*
+"@param n - index 0
+@param paths - index 1
+@param m - index 2
+@param classes - index 3
+@param w - index 4
+@param h - index 5
+@param num_boxes - index 6
+@param background - index 7")
+(bind-lib libdarknet load_data_tag [data,i8**,i32,i32,i32,i32,i32,i32]*
+"@param paths - index 0
+@param n - index 1
+@param m - index 2
+@param k - index 3
+@param min - index 4
+@param max - index 5
+@param size - index 6")
+(bind-lib libdarknet load_data_augment [data,i8**,i32,i32,i8**,i32,i32,i32,i32]*
+"@param paths - index 0
+@param n - index 1
+@param m - index 2
+@param labels - index 3
+@param k - index 4
+@param min - index 5
+@param max - index 6
+@param size - index 7")
+(bind-lib libdarknet load_go [data,i8*]*
+"@param filename - index 0")
+(bind-lib libdarknet read_boxes [box_label,i8*,i32*]*
+"@param filename - index 0
+@param n - index 1")
+(bind-lib libdarknet load_cifar10_data [data,i8*]*
+"@param filename - index 0")
+(bind-lib libdarknet load_all_cifar10 [data]*
+"")
+(bind-lib libdarknet load_data_writing [data,i8**,i32,i32,i32,i32,i32,i32]*
+"@param paths - index 0
+@param n - index 1
+@param m - index 2
+@param w - index 3
+@param h - index 4
+@param out_w - index 5
+@param out_h - index 6")
+(bind-lib libdarknet get_paths [list,i8*]*
+"@param filename - index 0")
+(bind-lib libdarknet get_labels [i8,i8*]*
+"@param filename - index 0")
+(bind-lib libdarknet get_random_batch [i8,data,i32,float*,float*]*
+"@param d - index 0
+@param n - index 1
+@param X - index 2
+@param y - index 3")
+(bind-lib libdarknet get_random_data [data,data,i32]*
+"@param d - index 0
+@param num - index 1")
+(bind-lib libdarknet get_next_batch [i8,data,i32,i32,float*,float*]*
+"@param d - index 0
+@param n - index 1
+@param offset - index 2
+@param X - index 3
+@param y - index 4")
+(bind-lib libdarknet load_categorical_data_csv [data,i8*,i32,i32]*
+"@param filename - index 0
+@param target - index 1
+@param k - index 2")
+(bind-lib libdarknet normalize_data_rows [i8,data]*
+"@param d - index 0")
+(bind-lib libdarknet scale_data_rows [i8,data,float]*
+"@param d - index 0
+@param s - index 1")
+(bind-lib libdarknet translate_data_rows [i8,data,float]*
+"@param d - index 0
+@param s - index 1")
+(bind-lib libdarknet randomize_data [i8,data]*
+"@param d - index 0")
+(bind-lib libdarknet split_data [data,data,i32,i32]*
+"@param d - index 0
+@param part - index 1
+@param total - index 2")
+(bind-lib libdarknet concat_data [data,data,data]*
+"@param d1 - index 0
+@param d2 - index 1")

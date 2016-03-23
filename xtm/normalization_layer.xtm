@@ -1,0 +1,28 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/normalization_layer.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(sys:load "image.xtm")
+(sys:load "layer.xtm")
+(sys:load "network.xtm")
+(bind-lib libdarknet make_normalization_layer [layer,i32,i32,i32,i32,i32,float,float,float]*
+"@param batch - index 0
+@param w - index 1
+@param h - index 2
+@param c - index 3
+@param size - index 4
+@param alpha - index 5
+@param beta - index 6
+@param kappa - index 7")
+(bind-lib libdarknet resize_normalization_layer [i8,layer*,i32,i32]*
+"@param layer - index 0
+@param h - index 1
+@param w - index 2")
+(bind-lib libdarknet forward_normalization_layer [i8,layer,network_state]*
+"@param layer - index 0
+@param state - index 1")
+(bind-lib libdarknet backward_normalization_layer [i8,layer,network_state]*
+"@param layer - index 0
+@param state - index 1")
+(bind-lib libdarknet visualize_normalization_layer [i8,layer,i8*]*
+"@param layer - index 0
+@param window - index 1")

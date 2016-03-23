@@ -1,0 +1,24 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/connected_layer.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(sys:load "activations.xtm")
+(sys:load "layer.xtm")
+(sys:load "network.xtm")
+(bind-lib libdarknet make_connected_layer [connected_layer,i32,i32,i32,ACTIVATION,i32]*
+"@param batch - index 0
+@param inputs - index 1
+@param outputs - index 2
+@param activation - index 3
+@param batch_normalize - index 4")
+(bind-lib libdarknet forward_connected_layer [i8,connected_layer,network_state]*
+"@param layer - index 0
+@param state - index 1")
+(bind-lib libdarknet backward_connected_layer [i8,connected_layer,network_state]*
+"@param layer - index 0
+@param state - index 1")
+(bind-lib libdarknet update_connected_layer [i8,connected_layer,i32,float,float,float]*
+"@param layer - index 0
+@param batch - index 1
+@param learning_rate - index 2
+@param momentum - index 3
+@param decay - index 4")

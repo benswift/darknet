@@ -1,0 +1,37 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/matrix.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(bind-type matrix <i32,i32,float**>
+"@member rows - index 0
+@member cols - index 1
+@member vals - index 2")
+(bind-lib libdarknet make_matrix [matrix,i32,i32]*
+"@param rows - index 0
+@param cols - index 1")
+(bind-lib libdarknet free_matrix [i8,matrix]*
+"@param m - index 0")
+(bind-lib libdarknet print_matrix [i8,matrix]*
+"@param m - index 0")
+(bind-lib libdarknet csv_to_matrix [matrix,i8*]*
+"@param filename - index 0")
+(bind-lib libdarknet matrix_to_csv [i8,matrix]*
+"@param m - index 0")
+(bind-lib libdarknet hold_out_matrix [matrix,matrix*,i32]*
+"@param m - index 0
+@param n - index 1")
+(bind-lib libdarknet matrix_topk_accuracy [float,matrix,matrix,i32]*
+"@param truth - index 0
+@param guess - index 1
+@param k - index 2")
+(bind-lib libdarknet matrix_add_matrix [i8,matrix,matrix]*
+"@param from - index 0
+@param to - index 1")
+(bind-lib libdarknet scale_matrix [i8,matrix,float]*
+"@param m - index 0
+@param scale - index 1")
+(bind-lib libdarknet resize_matrix [matrix,matrix,i32]*
+"@param m - index 0
+@param size - index 1")
+(bind-lib libdarknet pop_column [float,matrix*,i32]*
+"@param m - index 0
+@param c - index 1")

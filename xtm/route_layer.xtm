@@ -1,0 +1,16 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/route_layer.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(sys:load "network.xtm")
+(sys:load "layer.xtm")
+(bind-lib libdarknet make_route_layer [route_layer,i32,i32,i32*,i32*]*
+"@param batch - index 0
+@param n - index 1
+@param input_layers - index 2
+@param input_size - index 3")
+(bind-lib libdarknet forward_route_layer [i8,route_layer,network]*
+"@param l - index 0
+@param net - index 1")
+(bind-lib libdarknet backward_route_layer [i8,route_layer,network]*
+"@param l - index 0
+@param net - index 1")

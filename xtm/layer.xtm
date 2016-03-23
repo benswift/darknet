@@ -1,0 +1,118 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/layer.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(sys:load "activations.xtm")
+(bind-alias LAYER_TYPE enum)
+(bind-val CONVOLUTIONAL LAYER_TYPE 0)
+(bind-val DECONVOLUTIONAL LAYER_TYPE 1)
+(bind-val CONNECTED LAYER_TYPE 2)
+(bind-val MAXPOOL LAYER_TYPE 3)
+(bind-val SOFTMAX LAYER_TYPE 4)
+(bind-val DETECTION LAYER_TYPE 5)
+(bind-val DROPOUT LAYER_TYPE 6)
+(bind-val CROP LAYER_TYPE 7)
+(bind-val ROUTE LAYER_TYPE 8)
+(bind-val COST LAYER_TYPE 9)
+(bind-val NORMALIZATION LAYER_TYPE 10)
+(bind-val AVGPOOL LAYER_TYPE 11)
+(bind-val LOCAL LAYER_TYPE 12)
+(bind-val SHORTCUT LAYER_TYPE 13)
+(bind-val ACTIVE LAYER_TYPE 14)
+(bind-val RNN LAYER_TYPE 15)
+(bind-val CRNN LAYER_TYPE 16)
+(bind-alias COST_TYPE enum)
+(bind-val SSE COST_TYPE 0)
+(bind-val MASKED COST_TYPE 1)
+(bind-val SMOOTH COST_TYPE 2)
+(bind-type layer <LAYER_TYPE,ACTIVATION,COST_TYPE,i32,i32,i32,i32,i32,i32,i32,i32,i32,i32,i32,i32,i32,i32,i32,i32,i32,i32,i32,i32,i32,i32,i32,i32,i32,i32,float,float,float,float,float,float,i32,i32,i32,i32,i32,i32,i32,i32,i32,float,float,float,float,float,float,float,i32,i32,float,float,float,i32*,float*,float*,float*,i8*,float*,float*,float*,float*,float*,float*,float*,float*,float*,float*,i32*,i32*,float*,float*,float*,float*,float*,float*,float*,float*,float*,float*,float*,float*,float*,layer*,layer*,layer*>
+"@member type - index 0
+@member activation - index 1
+@member cost_type - index 2
+@member batch_normalize - index 3
+@member shortcut - index 4
+@member batch - index 5
+@member forced - index 6
+@member flipped - index 7
+@member inputs - index 8
+@member outputs - index 9
+@member truths - index 10
+@member h - index 11
+@member w - index 12
+@member c - index 13
+@member out_h - index 14
+@member out_w - index 15
+@member out_c - index 16
+@member n - index 17
+@member groups - index 18
+@member size - index 19
+@member side - index 20
+@member stride - index 21
+@member pad - index 22
+@member sqrt - index 23
+@member flip - index 24
+@member index - index 25
+@member binary - index 26
+@member steps - index 27
+@member hidden - index 28
+@member dot - index 29
+@member angle - index 30
+@member jitter - index 31
+@member saturation - index 32
+@member exposure - index 33
+@member shift - index 34
+@member softmax - index 35
+@member classes - index 36
+@member coords - index 37
+@member background - index 38
+@member rescore - index 39
+@member objectness - index 40
+@member does_cost - index 41
+@member joint - index 42
+@member noadjust - index 43
+@member alpha - index 44
+@member beta - index 45
+@member kappa - index 46
+@member coord_scale - index 47
+@member object_scale - index 48
+@member noobject_scale - index 49
+@member class_scale - index 50
+@member dontload - index 51
+@member dontloadscales - index 52
+@member temperature - index 53
+@member probability - index 54
+@member scale - index 55
+@member indexes - index 56
+@member rand - index 57
+@member cost - index 58
+@member filters - index 59
+@member cfilters - index 60
+@member filter_updates - index 61
+@member state - index 62
+@member binary_filters - index 63
+@member biases - index 64
+@member bias_updates - index 65
+@member scales - index 66
+@member scale_updates - index 67
+@member weights - index 68
+@member weight_updates - index 69
+@member col_image - index 70
+@member input_layers - index 71
+@member input_sizes - index 72
+@member delta - index 73
+@member output - index 74
+@member squared - index 75
+@member norms - index 76
+@member spatial_mean - index 77
+@member mean - index 78
+@member variance - index 79
+@member mean_delta - index 80
+@member variance_delta - index 81
+@member rolling_mean - index 82
+@member rolling_variance - index 83
+@member x - index 84
+@member x_norm - index 85
+@member input_layer - index 86
+@member self_layer - index 87
+@member output_layer - index 88")
+(bind-lib libdarknet free_layer [i8,layer]*
+"@param  - index 0")

@@ -1,0 +1,24 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/avgpool_layer.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(sys:load "image.xtm")
+(sys:load "cuda.xtm")
+(sys:load "layer.xtm")
+(sys:load "network.xtm")
+(bind-lib libdarknet get_avgpool_image [image,avgpool_layer]*
+"@param l - index 0")
+(bind-lib libdarknet make_avgpool_layer [avgpool_layer,i32,i32,i32,i32]*
+"@param batch - index 0
+@param w - index 1
+@param h - index 2
+@param c - index 3")
+(bind-lib libdarknet resize_avgpool_layer [i8,avgpool_layer*,i32,i32]*
+"@param l - index 0
+@param w - index 1
+@param h - index 2")
+(bind-lib libdarknet forward_avgpool_layer [i8,avgpool_layer,network_state]*
+"@param l - index 0
+@param state - index 1")
+(bind-lib libdarknet backward_avgpool_layer [i8,avgpool_layer,network_state]*
+"@param l - index 0
+@param state - index 1")

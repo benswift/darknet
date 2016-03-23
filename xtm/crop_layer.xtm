@@ -1,0 +1,26 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/crop_layer.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(sys:load "image.xtm")
+(sys:load "layer.xtm")
+(sys:load "network.xtm")
+(bind-lib libdarknet get_crop_image [image,crop_layer]*
+"@param l - index 0")
+(bind-lib libdarknet make_crop_layer [crop_layer,i32,i32,i32,i32,i32,i32,i32,float,float,float]*
+"@param batch - index 0
+@param h - index 1
+@param w - index 2
+@param c - index 3
+@param crop_height - index 4
+@param crop_width - index 5
+@param flip - index 6
+@param angle - index 7
+@param saturation - index 8
+@param exposure - index 9")
+(bind-lib libdarknet forward_crop_layer [i8,crop_layer,network_state]*
+"@param l - index 0
+@param state - index 1")
+(bind-lib libdarknet resize_crop_layer [i8,layer*,i32,i32]*
+"@param l - index 0
+@param w - index 1
+@param h - index 2")

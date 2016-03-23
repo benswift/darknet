@@ -1,0 +1,42 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/local_layer.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(sys:load "cuda.xtm")
+(sys:load "image.xtm")
+(sys:load "activations.xtm")
+(sys:load "layer.xtm")
+(sys:load "network.xtm")
+(bind-lib libdarknet make_local_layer [local_layer,i32,i32,i32,i32,i32,i32,i32,i32,ACTIVATION]*
+"@param batch - index 0
+@param h - index 1
+@param w - index 2
+@param c - index 3
+@param n - index 4
+@param size - index 5
+@param stride - index 6
+@param pad - index 7
+@param activation - index 8")
+(bind-lib libdarknet forward_local_layer [i8,local_layer,network_state]*
+"@param layer - index 0
+@param state - index 1")
+(bind-lib libdarknet backward_local_layer [i8,local_layer,network_state]*
+"@param layer - index 0
+@param state - index 1")
+(bind-lib libdarknet update_local_layer [i8,local_layer,i32,float,float,float]*
+"@param layer - index 0
+@param batch - index 1
+@param learning_rate - index 2
+@param momentum - index 3
+@param decay - index 4")
+(bind-lib libdarknet bias_output [i8,float*,float*,i32,i32,i32]*
+"@param output - index 0
+@param biases - index 1
+@param batch - index 2
+@param n - index 3
+@param size - index 4")
+(bind-lib libdarknet backward_bias [i8,float*,float*,i32,i32,i32]*
+"@param bias_updates - index 0
+@param delta - index 1
+@param batch - index 2
+@param n - index 3
+@param size - index 4")

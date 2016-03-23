@@ -1,0 +1,20 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/shortcut_layer.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(sys:load "layer.xtm")
+(sys:load "network.xtm")
+(bind-lib libdarknet make_shortcut_layer [layer,i32,i32,i32,i32,i32,i32,i32,i32]*
+"@param batch - index 0
+@param index - index 1
+@param w - index 2
+@param h - index 3
+@param c - index 4
+@param w2 - index 5
+@param h2 - index 6
+@param c2 - index 7")
+(bind-lib libdarknet forward_shortcut_layer [i8,layer,network_state]*
+"@param l - index 0
+@param state - index 1")
+(bind-lib libdarknet backward_shortcut_layer [i8,layer,network_state]*
+"@param l - index 0
+@param state - index 1")

@@ -1,0 +1,35 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/activations.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(sys:load "cuda.xtm")
+(sys:load "math.xtm")
+(bind-alias ACTIVATION enum)
+(bind-val LOGISTIC ACTIVATION 0)
+(bind-val RELU ACTIVATION 1)
+(bind-val RELIE ACTIVATION 2)
+(bind-val LINEAR ACTIVATION 3)
+(bind-val RAMP ACTIVATION 4)
+(bind-val TANH ACTIVATION 5)
+(bind-val PLSE ACTIVATION 6)
+(bind-val LEAKY ACTIVATION 7)
+(bind-val ELU ACTIVATION 8)
+(bind-val LOGGY ACTIVATION 9)
+(bind-lib libdarknet get_activation [ACTIVATION,i8*]*
+"@param s - index 0")
+(bind-lib libdarknet get_activation_string [i8,ACTIVATION]*
+"@param a - index 0")
+(bind-lib libdarknet activate [float,float,ACTIVATION]*
+"@param x - index 0
+@param a - index 1")
+(bind-lib libdarknet gradient [float,float,ACTIVATION]*
+"@param x - index 0
+@param a - index 1")
+(bind-lib libdarknet gradient_array [i8,float*,i32,ACTIVATION,float*]*
+"@param x - index 0
+@param n - index 1
+@param a - index 2
+@param delta - index 3")
+(bind-lib libdarknet activate_array [i8,float*,i32,ACTIVATION]*
+"@param x - index 0
+@param n - index 1
+@param a - index 2")

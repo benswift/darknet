@@ -1,0 +1,43 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/deconvolutional_layer.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(sys:load "cuda.xtm")
+(sys:load "image.xtm")
+(sys:load "activations.xtm")
+(sys:load "layer.xtm")
+(sys:load "network.xtm")
+(bind-lib libdarknet make_deconvolutional_layer [deconvolutional_layer,i32,i32,i32,i32,i32,i32,i32,ACTIVATION]*
+"@param batch - index 0
+@param h - index 1
+@param w - index 2
+@param c - index 3
+@param n - index 4
+@param size - index 5
+@param stride - index 6
+@param activation - index 7")
+(bind-lib libdarknet resize_deconvolutional_layer [i8,deconvolutional_layer*,i32,i32]*
+"@param layer - index 0
+@param h - index 1
+@param w - index 2")
+(bind-lib libdarknet forward_deconvolutional_layer [i8,deconvolutional_layer,network_state]*
+"@param layer - index 0
+@param state - index 1")
+(bind-lib libdarknet update_deconvolutional_layer [i8,deconvolutional_layer,float,float,float]*
+"@param layer - index 0
+@param learning_rate - index 1
+@param momentum - index 2
+@param decay - index 3")
+(bind-lib libdarknet backward_deconvolutional_layer [i8,deconvolutional_layer,network_state]*
+"@param layer - index 0
+@param state - index 1")
+(bind-lib libdarknet get_deconvolutional_image [image,deconvolutional_layer]*
+"@param layer - index 0")
+(bind-lib libdarknet get_deconvolutional_delta [image,deconvolutional_layer]*
+"@param layer - index 0")
+(bind-lib libdarknet get_deconvolutional_filter [image,deconvolutional_layer,i32]*
+"@param layer - index 0
+@param i - index 1")
+(bind-lib libdarknet deconvolutional_out_height [i32,deconvolutional_layer]*
+"@param layer - index 0")
+(bind-lib libdarknet deconvolutional_out_width [i32,deconvolutional_layer]*
+"@param layer - index 0")

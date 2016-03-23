@@ -1,0 +1,28 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/crnn_layer.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(sys:load "activations.xtm")
+(sys:load "layer.xtm")
+(sys:load "network.xtm")
+(bind-lib libdarknet make_crnn_layer [layer,i32,i32,i32,i32,i32,i32,i32,ACTIVATION,i32]*
+"@param batch - index 0
+@param h - index 1
+@param w - index 2
+@param c - index 3
+@param hidden_filters - index 4
+@param output_filters - index 5
+@param steps - index 6
+@param activation - index 7
+@param batch_normalize - index 8")
+(bind-lib libdarknet forward_crnn_layer [i8,layer,network_state]*
+"@param l - index 0
+@param state - index 1")
+(bind-lib libdarknet backward_crnn_layer [i8,layer,network_state]*
+"@param l - index 0
+@param state - index 1")
+(bind-lib libdarknet update_crnn_layer [i8,layer,i32,float,float,float]*
+"@param l - index 0
+@param batch - index 1
+@param learning_rate - index 2
+@param momentum - index 3
+@param decay - index 4")

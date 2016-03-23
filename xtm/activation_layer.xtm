@@ -1,0 +1,16 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/activation_layer.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(sys:load "activations.xtm")
+(sys:load "layer.xtm")
+(sys:load "network.xtm")
+(bind-lib libdarknet make_activation_layer [layer,i32,i32,ACTIVATION]*
+"@param batch - index 0
+@param inputs - index 1
+@param activation - index 2")
+(bind-lib libdarknet forward_activation_layer [i8,layer,network_state]*
+"@param l - index 0
+@param state - index 1")
+(bind-lib libdarknet backward_activation_layer [i8,layer,network_state]*
+"@param l - index 0
+@param state - index 1")

@@ -1,0 +1,25 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/list.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(bind-type node <i8*,node*,node*>
+"@member val - index 0
+@member next - index 1
+@member prev - index 2")
+(bind-type list <i32,node*,node*>
+"@member size - index 0
+@member front - index 1
+@member back - index 2")
+(bind-lib libdarknet make_list [list]*
+"")
+(bind-lib libdarknet list_find [i32,list*,i8*]*
+"@param l - index 0
+@param val - index 1")
+(bind-lib libdarknet list_insert [i8,list*,i8*]*
+"@param  - index 0
+@param  - index 1")
+(bind-lib libdarknet list_to_array [i8,list*]*
+"@param l - index 0")
+(bind-lib libdarknet free_list [i8,list*]*
+"@param l - index 0")
+(bind-lib libdarknet free_list_contents [i8,list*]*
+"@param l - index 0")

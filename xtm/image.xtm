@@ -1,0 +1,209 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/image.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(sys:load "box.xtm")
+(bind-type image <i32,i32,i32,float*>
+"@member h - index 0
+@member w - index 1
+@member c - index 2
+@member data - index 3")
+(bind-lib libdarknet get_color [float,i32,i32,i32]*
+"@param c - index 0
+@param x - index 1
+@param max - index 2")
+(bind-lib libdarknet flip_image [i8,image]*
+"@param a - index 0")
+(bind-lib libdarknet draw_box [i8,image,i32,i32,i32,i32,float,float,float]*
+"@param a - index 0
+@param x1 - index 1
+@param y1 - index 2
+@param x2 - index 3
+@param y2 - index 4
+@param r - index 5
+@param g - index 6
+@param b - index 7")
+(bind-lib libdarknet draw_box_width [i8,image,i32,i32,i32,i32,i32,float,float,float]*
+"@param a - index 0
+@param x1 - index 1
+@param y1 - index 2
+@param x2 - index 3
+@param y2 - index 4
+@param w - index 5
+@param r - index 6
+@param g - index 7
+@param b - index 8")
+(bind-lib libdarknet draw_bbox [i8,image,box,i32,float,float,float]*
+"@param a - index 0
+@param bbox - index 1
+@param w - index 2
+@param r - index 3
+@param g - index 4
+@param b - index 5")
+(bind-lib libdarknet draw_label [i8,image,i32,i32,image,float*]*
+"@param a - index 0
+@param r - index 1
+@param c - index 2
+@param label - index 3
+@param rgb - index 4")
+(bind-lib libdarknet draw_detections [i8,image,i32,float,box*,float**,i8**,image*,i32]*
+"@param im - index 0
+@param num - index 1
+@param thresh - index 2
+@param boxes - index 3
+@param probs - index 4
+@param names - index 5
+@param labels - index 6
+@param classes - index 7")
+(bind-lib libdarknet image_distance [image,image,image]*
+"@param a - index 0
+@param b - index 1")
+(bind-lib libdarknet scale_image [i8,image,float]*
+"@param m - index 0
+@param s - index 1")
+(bind-lib libdarknet crop_image [image,image,i32,i32,i32,i32]*
+"@param im - index 0
+@param dx - index 1
+@param dy - index 2
+@param w - index 3
+@param h - index 4")
+(bind-lib libdarknet random_crop_image [image,image,i32,i32,i32]*
+"@param im - index 0
+@param low - index 1
+@param high - index 2
+@param size - index 3")
+(bind-lib libdarknet resize_image [image,image,i32,i32]*
+"@param im - index 0
+@param w - index 1
+@param h - index 2")
+(bind-lib libdarknet resize_min [image,image,i32]*
+"@param im - index 0
+@param min - index 1")
+(bind-lib libdarknet translate_image [i8,image,float]*
+"@param m - index 0
+@param s - index 1")
+(bind-lib libdarknet normalize_image [i8,image]*
+"@param p - index 0")
+(bind-lib libdarknet rotate_image [image,image,float]*
+"@param m - index 0
+@param rad - index 1")
+(bind-lib libdarknet rotate_image_cw [i8,image,i32]*
+"@param im - index 0
+@param times - index 1")
+(bind-lib libdarknet embed_image [i8,image,image,i32,i32]*
+"@param source - index 0
+@param dest - index 1
+@param dx - index 2
+@param dy - index 3")
+(bind-lib libdarknet saturate_image [i8,image,float]*
+"@param im - index 0
+@param sat - index 1")
+(bind-lib libdarknet exposure_image [i8,image,float]*
+"@param im - index 0
+@param sat - index 1")
+(bind-lib libdarknet saturate_exposure_image [i8,image,float,float]*
+"@param im - index 0
+@param sat - index 1
+@param exposure - index 2")
+(bind-lib libdarknet hsv_to_rgb [i8,image]*
+"@param im - index 0")
+(bind-lib libdarknet rgbgr_image [i8,image]*
+"@param im - index 0")
+(bind-lib libdarknet constrain_image [i8,image]*
+"@param im - index 0")
+(bind-lib libdarknet grayscale_image [image,image]*
+"@param im - index 0")
+(bind-lib libdarknet threshold_image [image,image,float]*
+"@param im - index 0
+@param thresh - index 1")
+(bind-lib libdarknet collapse_image_layers [image,image,i32]*
+"@param source - index 0
+@param border - index 1")
+(bind-lib libdarknet collapse_images_horz [image,image*,i32]*
+"@param ims - index 0
+@param n - index 1")
+(bind-lib libdarknet collapse_images_vert [image,image*,i32]*
+"@param ims - index 0
+@param n - index 1")
+(bind-lib libdarknet show_image [i8,image,i8*]*
+"@param p - index 0
+@param name - index 1")
+(bind-lib libdarknet show_image_normalized [i8,image,i8*]*
+"@param im - index 0
+@param name - index 1")
+(bind-lib libdarknet save_image [i8,image,i8*]*
+"@param p - index 0
+@param name - index 1")
+(bind-lib libdarknet show_images [i8,image*,i32,i8*]*
+"@param ims - index 0
+@param n - index 1
+@param window - index 2")
+(bind-lib libdarknet show_image_layers [i8,image,i8*]*
+"@param p - index 0
+@param name - index 1")
+(bind-lib libdarknet show_image_collapsed [i8,image,i8*]*
+"@param p - index 0
+@param name - index 1")
+(bind-lib libdarknet print_image [i8,image]*
+"@param m - index 0")
+(bind-lib libdarknet make_image [image,i32,i32,i32]*
+"@param w - index 0
+@param h - index 1
+@param c - index 2")
+(bind-lib libdarknet make_random_image [image,i32,i32,i32]*
+"@param w - index 0
+@param h - index 1
+@param c - index 2")
+(bind-lib libdarknet make_empty_image [image,i32,i32,i32]*
+"@param w - index 0
+@param h - index 1
+@param c - index 2")
+(bind-lib libdarknet float_to_image [image,i32,i32,i32,float*]*
+"@param w - index 0
+@param h - index 1
+@param c - index 2
+@param data - index 3")
+(bind-lib libdarknet copy_image [image,image]*
+"@param p - index 0")
+(bind-lib libdarknet load_image [image,i8*,i32,i32,i32]*
+"@param filename - index 0
+@param w - index 1
+@param h - index 2
+@param c - index 3")
+(bind-lib libdarknet load_image_color [image,i8*,i32,i32]*
+"@param filename - index 0
+@param w - index 1
+@param h - index 2")
+(bind-lib libdarknet get_pixel [float,image,i32,i32,i32]*
+"@param m - index 0
+@param x - index 1
+@param y - index 2
+@param c - index 3")
+(bind-lib libdarknet get_pixel_extend [float,image,i32,i32,i32]*
+"@param m - index 0
+@param x - index 1
+@param y - index 2
+@param c - index 3")
+(bind-lib libdarknet set_pixel [i8,image,i32,i32,i32,float]*
+"@param m - index 0
+@param x - index 1
+@param y - index 2
+@param c - index 3
+@param val - index 4")
+(bind-lib libdarknet add_pixel [i8,image,i32,i32,i32,float]*
+"@param m - index 0
+@param x - index 1
+@param y - index 2
+@param c - index 3
+@param val - index 4")
+(bind-lib libdarknet bilinear_interpolate [float,image,float,float,i32]*
+"@param im - index 0
+@param x - index 1
+@param y - index 2
+@param c - index 3")
+(bind-lib libdarknet get_image_layer [image,image,i32]*
+"@param m - index 0
+@param l - index 1")
+(bind-lib libdarknet free_image [i8,image]*
+"@param m - index 0")
+(bind-lib libdarknet test_resize [i8,i8*]*
+"@param filename - index 0")

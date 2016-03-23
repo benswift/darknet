@@ -1,0 +1,19 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/detection_layer.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(sys:load "layer.xtm")
+(sys:load "network.xtm")
+(bind-lib libdarknet make_detection_layer [detection_layer,i32,i32,i32,i32,i32,i32,i32]*
+"@param batch - index 0
+@param inputs - index 1
+@param n - index 2
+@param size - index 3
+@param classes - index 4
+@param coords - index 5
+@param rescore - index 6")
+(bind-lib libdarknet forward_detection_layer [i8,detection_layer,network_state]*
+"@param l - index 0
+@param state - index 1")
+(bind-lib libdarknet backward_detection_layer [i8,detection_layer,network_state]*
+"@param l - index 0
+@param state - index 1")

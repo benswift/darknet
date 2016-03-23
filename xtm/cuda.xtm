@@ -1,0 +1,4 @@
+;; xtlang bindings automatically generated from /Users/ben/Code/src/darknet/src/cuda.h
+;; by extempore-debovinator.el on 2016-03-23
+
+(bind-val gpu_index i32)
